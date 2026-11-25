@@ -2,87 +2,220 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Academic profile and research portfolio">
-<title>Xinran Liu | Geophysics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Xinran Liu (刘欣然) — undergraduate researcher in computational geophysics at Zhejiang University. DAS, imaging, inversion, environmental monitoring.">
+<meta name="theme-color" content="#176b72">
+<meta property="og:title" content="Xinran Liu 刘欣然 · Geophysics">
+<meta property="og:description" content="DAS · Imaging · Computational geophysics · Monitoring for environmental change">
+<title>Xinran Liu 刘欣然 | Geophysics</title>
 <style>
-:root{--ink:#172b3a;--muted:#60717d;--line:#dce4e8;--paper:#fbfcfc;--accent:#176b72;--pale:#edf4f3}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+:root{--ink:#172b3a;--muted:#5d6e7a;--line:#dce4e8;--paper:#fbfcfc;--card:#fff;--accent:#176b72;--pale:#edf4f3;--body:#344b59}
+@media(prefers-color-scheme:dark){:root{--ink:#e6eef1;--muted:#9aabb5;--line:#2a3a44;--paper:#111a20;--card:#17232b;--accent:#5fb8bd;--pale:#1d3136;--body:#c3d1d8}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 .wrap{max-width:980px;margin:auto;padding:0 28px}
-header{border-bottom:1px solid var(--line);background:#fff}
-nav{display:flex;justify-content:space-between;align-items:center;min-height:66px;gap:20px}
-.brand{font-family:Georgia,serif;font-size:20px;font-weight:700;letter-spacing:.02em}
-.navlinks{display:flex;gap:22px;font-size:13px;color:var(--muted)}
-.hero{padding:76px 0 58px;display:grid;grid-template-columns:1fr 220px;gap:50px;align-items:center}
+.serif{font-family:Georgia,"Times New Roman","Songti SC",serif}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+nav{display:flex;justify-content:space-between;align-items:center;min-height:60px;gap:20px}
+.brand{font:700 19px Georgia,serif;letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+.navlinks{display:flex;gap:22px;font-size:13px;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{color:var(--muted);white-space:nowrap;padding:6px 0}
+.navlinks a:hover{color:var(--accent);text-decoration:none}
+
+/* hero */
+.hero{padding:68px 0 54px;display:grid;grid-template-columns:1fr 210px;gap:48px;align-items:center}
 .kicker{text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-size:11px;font-weight:700}
-h1{font:500 clamp(42px,7vw,66px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:14px 0}
-.subtitle{font-size:18px;color:var(--muted);max-width:650px}
-.intro{max-width:690px;margin-top:22px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{display:inline-block;padding:10px 17px;border:1px solid var(--accent);border-radius:3px;font-size:13px;font-weight:650}
-.btn.primary{background:var(--accent);color:white}
-.profile-mark{height:190px;border:1px solid var(--line);background:linear-gradient(145deg,#eaf1f0,#f8faf9);display:flex;align-items:center;justify-content:center;color:#527078;font:italic 58px Georgia,serif}
-section{padding:43px 0;border-top:1px solid var(--line)}
-.section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:22px}
-h2{font:500 29px Georgia,serif;margin:0}
-.section-no{font-size:11px;letter-spacing:.12em;color:var(--accent)}
-p{margin:9px 0;color:#344b59}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:#fff;border:1px solid var(--line);padding:20px 21px;border-radius:3px}
-.card h3{font-size:16px;margin:0 0 7px}
-.meta{font-size:12px;color:var(--muted);letter-spacing:.02em}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
-.tag{font-size:11px;background:var(--pale);color:#315e61;padding:4px 8px;border-radius:2px}
-ul{padding-left:19px;color:#344b59}li{margin:6px 0}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.contact-item{padding:15px 0;border-bottom:1px solid var(--line)}
-footer{padding:25px 0 40px;color:var(--muted);font-size:12px}
-.note{background:#fff8e8;border-left:3px solid #c99b43;padding:12px 15px;color:#6b572f;font-size:13px;margin:24px 0}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding:52px 0 42px}.profile-mark{display:none}.navlinks{gap:12px;font-size:12px}.grid,.contact{grid-template-columns:1fr}.wrap{padding:0 20px}}
+h1{font:500 clamp(40px,7vw,62px)/1.08 Georgia,serif;letter-spacing:-.03em;margin:14px 0 4px}
+.cn-name{font-size:22px;color:var(--muted);letter-spacing:.18em;margin-bottom:14px}
+.subtitle{font-size:17px;color:var(--muted);max-width:640px}
+.subtitle b{color:var(--ink);font-weight:600}
+.interests{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border:1px solid var(--accent);border-radius:4px;font-size:13px;font-weight:650;min-height:42px}
+.btn:hover{text-decoration:none;background:var(--pale)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{opacity:.9;background:var(--accent)}
+.btn svg{width:16px;height:16px;fill:currentColor}
+.avatar{width:210px;height:210px;border-radius:50%;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,var(--pale),var(--card));display:flex;align-items:center;justify-content:center;color:var(--accent);font:italic 60px Georgia,serif;justify-self:end}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* sections */
+section{padding:44px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+.section-head{display:flex;align-items:baseline;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+h2{font:500 28px Georgia,serif;margin:0}
+.section-no{font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700}
+p{margin:9px 0;color:var(--body)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);padding:20px 21px;border-radius:6px;display:flex;flex-direction:column}
+.card h3{font-size:16.5px;line-height:1.4;margin:6px 0 8px}
+.card p{font-size:14.5px}
+.card .more{margin-top:auto;padding-top:8px;font-size:14px}
+.meta{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.tag{font-size:11.5px;background:var(--pale);color:var(--accent);padding:4px 9px;border-radius:3px}
+
+/* publications */
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:62px 1fr;gap:14px;color:var(--body);font-size:15px}
+.pubs li:last-child{border-bottom:0}
+.year{font:600 14px Georgia,serif;color:var(--accent);padding-top:2px}
+.pubs .title{color:var(--ink);font-weight:600}
+.pubs .venue{font-style:italic}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid var(--accent);color:var(--accent);margin-left:4px;vertical-align:1px}
+
+/* honors */
+.honors{margin:0;padding-left:19px;color:var(--body);font-size:15px}
+.honors li{margin:7px 0}
+
+/* gallery: fixed-height row, images keep their own aspect ratio */
+.gallery{display:flex;flex-wrap:wrap;gap:16px}
+.gallery figure{margin:0;flex:var(--r,1) 1 0;min-width:0}
+.gallery img{width:100%;height:auto;aspect-ratio:var(--ar);object-fit:cover;display:block;border-radius:6px;border:1px solid var(--line);background:var(--pale)}
+.gallery figcaption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5}
+.gallery figcaption b{color:var(--ink);font-weight:600}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.contact-item{padding:14px 0;border-bottom:1px solid var(--line)}
+.contact-item p{margin:2px 0 0}
+.contact-item a{word-break:break-all}
+footer{padding:26px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted);font-size:12px}
+
+/* mobile */
+@media(max-width:720px){
+ .wrap{padding:0 20px}
+ nav{min-height:54px}
+ .brand{font-size:17px}
+ .navlinks{gap:13px;font-size:12.5px}
+ .brand{font-size:16px}
+ .hero{grid-template-columns:1fr;gap:22px;padding:34px 0 38px;text-align:left}
+ .avatar{order:-1;width:112px;height:112px;font-size:36px;justify-self:start}
+ .cn-name{font-size:19px;margin-bottom:10px}
+ .subtitle{font-size:16px}
+ .actions .btn{flex:1 1 calc(50% - 10px);justify-content:center}
+ section{padding:34px 0}
+ h2{font-size:24px}
+ .grid{grid-template-columns:1fr}
+ .pubs li{grid-template-columns:1fr;gap:2px}
+ .contact{grid-template-columns:1fr}
+ .gallery{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+ .gallery::-webkit-scrollbar{display:none}
+ .gallery figure{flex:0 0 auto;width:calc(300px * var(--r));max-width:86vw;scroll-snap-align:start}
+}
+@media(max-width:480px){.navlinks a[href="#honors"],.navlinks a[href="#field"]{display:none}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><div class="brand">Xinran Liu</div><div class="navlinks"><a href="#about">About</a><a href="#research">Research</a><a href="#cv">CV</a><a href="#contact">Contact</a></div></nav></div></header>
-<main class="wrap">
+<header><div class="wrap"><nav>
+ <a class="brand" href="#top">Xinran Liu</a>
+ <div class="navlinks"><a href="#research">Research</a><a href="#publications">Publications</a><a href="#honors">Honors</a><a href="#field">Field</a><a href="#contact">Contact</a></div>
+</nav></div></header>
+
+<main class="wrap" id="top">
 <div class="hero">
  <div>
-  <div class="kicker">Academic profile · Geophysics</div>
+  <div class="kicker">Computational Geophysics · Zhejiang University</div>
   <h1>Xinran Liu</h1>
-  <div class="subtitle">Undergraduate researcher in geophysics<br>Computational methods · Seismic imaging · Subsurface monitoring</div>
-  <p class="intro">I am an undergraduate geology student at Zhejiang University interested in computational geophysics and data-driven methods for subsurface imaging and monitoring. My current work explores robust inversion, distributed acoustic sensing (DAS), and the integration of physical insight with computational approaches.</p>
-  <div class="actions"><a class="btn primary" href="assets/Xinran_Liu_CV.pdf">Download CV</a><a class="btn" href="#research">Explore research</a></div>
+  <div class="cn-name serif">刘欣然</div>
+  <div class="subtitle">Undergraduate researcher, <b>School of Earth Sciences, Zhejiang University</b> (Chu Kochen Honors College). I work on geophysical imaging and inversion, and on using fiber-optic sensing to monitor environmental change.</div>
+  <div class="interests">
+   <span class="tag">Distributed Acoustic Sensing</span><span class="tag">Imaging</span><span class="tag">Computational geophysics</span><span class="tag">Environmental monitoring</span>
+  </div>
+  <div class="actions">
+   <a class="btn primary" id="mail-btn" href="#contact"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm16 2.8-8 5-8-5V17h16z"/></svg>Email</a>
+   <a class="btn" href="https://www.linkedin.com/in/xinran-liu-3387aa37b/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.7 4.8 6.1V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>LinkedIn</a>
+   <a class="btn" href="https://github.com/MTinv-OT/MTinv_OT" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.8 18.3 5.1 18.3 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+   <a class="btn" href="assets/Xinran_Liu_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H4V2zm8 1.5V8h4.5zM8 12v2h8v-2zm0 4v2h8v-2z"/></svg>CV (PDF)</a>
+  </div>
  </div>
- <div class="profile-mark" aria-label="Initials">XL</div>
+ <div class="avatar" aria-label="Photo of Xinran Liu"><img src="assets/avatar.jpg" alt="Xinran Liu" onerror="this.style.display='none'"><span class="initials">XL</span></div>
 </div>
-<section id="about">
- <div class="section-head"><span class="section-no">01 / PROFILE</span><h2>About</h2></div>
- <p>My research interests lie at the intersection of geophysical inversion, seismic methods, and computational tools for monitoring the subsurface. I am particularly interested in methods that make geophysical interpretation more robust under imperfect data conditions and useful for time-lapse applications.</p>
- <p>I value a balance between mathematical formulation, numerical implementation, and geophysical interpretation—connecting algorithmic development with problems in energy and environmental monitoring.</p>
- <div class="tags"><span class="tag">Computational geophysics</span><span class="tag">Geophysical inversion</span><span class="tag">DAS</span><span class="tag">Ambient noise</span><span class="tag">Energy monitoring</span></div>
-</section>
+
 <section id="research">
- <div class="section-head"><span class="section-no">02 / SELECTED WORK</span><h2>Research</h2></div>
+ <div class="section-head"><span class="section-no">01 / RESEARCH</span><h2>Research</h2></div>
  <div class="grid">
-  <article class="card"><div class="meta">GEOPHYSICAL INVERSION · PYTORCH</div><h3>2D Magnetotelluric Inversion with Optimal Transport</h3><p>Developing an open-source PyTorch workflow using optimal-transport-based data misfit and graph-space formulations, with an emphasis on inversion behaviour under static-shift and data-distribution differences.</p><div class="tags"><span class="tag">MT inversion</span><span class="tag">Optimal transport</span><span class="tag">Automatic differentiation</span></div><p><a href="https://github.com/MTinv-OT/MTinv_OT" target="_blank" rel="noopener">GitHub repository →</a></p></article>
-  <article class="card"><div class="meta">DISTRIBUTED ACOUSTIC SENSING · AMBIENT NOISE</div><h3>Ambient-noise Interferometry with DAS</h3><p>Working with long-duration DAS recordings to investigate channel-pair geometry, cross-correlation behaviour, preprocessing, and time-lapse sensitivity in a coastal subsurface setting.</p><div class="tags"><span class="tag">DAS</span><span class="tag">Cross-correlation</span><span class="tag">Time-lapse monitoring</span></div></article>
-  <article class="card"><div class="meta">SEISMIC METHODS · GUIDED WAVES</div><h3>Seismic and Guided-wave Characterization</h3><p>Exploring dispersion analysis and near-surface characterization, connecting signal processing, physical modelling, and inversion-oriented interpretation.</p><div class="tags"><span class="tag">Dispersion</span><span class="tag">Surface waves</span><span class="tag">Wave propagation</span></div></article>
-  <article class="card"><div class="meta">FUTURE DIRECTION</div><h3>Learning-based Surrogates for Geophysical Modelling</h3><p>Interested in computationally efficient surrogate modelling and machine-learning methods that complement physics-based forward modelling and inversion.</p><div class="tags"><span class="tag">Scientific machine learning</span><span class="tag">Surrogate modelling</span></div></article>
+  <article class="card">
+   <div class="meta">DAS · Ambient noise · Summer 2026</div>
+   <h3>Time-lapse ambient-noise monitoring with fiber-optic DAS</h3>
+   <p>Visiting scholar at Colorado School of Mines (with Prof. Ge Jin &amp; Prof. Eileen R. Martin). Using a telecom fiber above a buried water main, I found that seasonal seismic velocity changes (dv/v) track the temperature of the flowing water, and identified pump-excited guided waves inside the pipe.</p>
+   <div class="tags"><span class="tag">DAS</span><span class="tag">Interferometry</span><span class="tag">dv/v monitoring</span></div>
+  </article>
+  <article class="card">
+   <div class="meta">Inversion · Optimal transport · 2024–2026</div>
+   <h3>Differentiable magnetotelluric inversion with optimal transport</h3>
+   <p>A 2-D MT forward and inverse framework in PyTorch with automatic differentiation. Replacing the pointwise L2 misfit with a (graph-space) Sinkhorn distance makes the inversion more robust to static-shift distortion. Advisor: Prof. Bo Yang.</p>
+   <div class="tags"><span class="tag">MT inversion</span><span class="tag">Optimal transport</span><span class="tag">PyTorch</span></div>
+   <a class="more" href="https://github.com/MTinv-OT/MTinv_OT" target="_blank" rel="noopener">Code: MTinv_OT →</a>
+  </article>
+  <article class="card">
+   <div class="meta">Imaging · Deep learning · Thesis, 2026–</div>
+   <h3>Uncertainty-aware surface-wave dispersion inversion</h3>
+   <p>Undergraduate thesis on quasi-2-D near-surface shear-wave velocity imaging with probabilistic neural networks and spatial constraints, focusing on calibrated uncertainty. Advisors: Prof. Weichang Li &amp; Prof. Feng Cheng.</p>
+   <div class="tags"><span class="tag">Surface waves</span><span class="tag">Uncertainty</span><span class="tag">Generative models</span></div>
+  </article>
  </div>
 </section>
-<section id="cv">
- <div class="section-head"><span class="section-no">03 / DOCUMENTS</span><h2>Curriculum Vitae</h2></div>
- <p>For education, research experience, selected presentations, technical skills, and references, please see my CV.</p>
- <div class="actions"><a class="btn primary" href="assets/Xinran_Liu_CV.pdf">Download CV (PDF)</a></div>
- <div class="note">Before publishing: place your final PDF at <strong>assets/Xinran_Liu_CV.pdf</strong>. Replace this template CV link if you choose a different filename.</div>
+
+<section id="publications">
+ <div class="section-head"><span class="section-no">02 / OUTPUT</span><h2>Publications &amp; Presentations</h2></div>
+ <ul class="pubs">
+  <li><span class="year">2026</span><div><b>Liu, X.</b>, Jin, G., Li, P., Martin, E. R., Cheng, F., &amp; He, P. <span class="title">Telecom fiber as a passive thermometer of water inside a buried transmission main: Implications for data-center cooling-water systems.</span> <span class="venue">AGU Annual Meeting 2026</span>, San Francisco. <span class="badge">Poster</span></div></li>
+  <li><span class="year">2026</span><div><b>Liu, X.</b>, Chen, X., Tang, Z., &amp; Yang, B. <span class="title">Two-dimensional magnetotelluric inversion using optimal transport and automatic differentiation.</span> <span class="venue">EGU General Assembly 2026</span>, Vienna. <span class="badge">Oral</span></div></li>
+  <li><span class="year">2026</span><div><b>Liu, X.</b>, Chen, X., Tang, Z., &amp; Yang, B. <span class="title">Beyond the ℓ2 norm: Robust electromagnetic inversion against noise and distortion using graph-space optimal transport.</span> To be submitted to <span class="venue">IEEE Transactions on Geoscience and Remote Sensing</span>. <span class="badge">In prep.</span></div></li>
+  <li><span class="year">2025</span><div><b>Liu, X.</b>, Chen, X., Tang, Z., &amp; Yang, B. <span class="title">Progress of one-dimensional magnetotelluric inversion based on optimal transport.</span> <span class="venue">Chinese Geoscience Union Annual Meeting</span>, Chengdu. <span class="badge">Poster</span></div></li>
+ </ul>
 </section>
+
+<section id="honors">
+ <div class="section-head"><span class="section-no">03 / RECOGNITION</span><h2>Selected Honors</h2></div>
+ <ul class="honors">
+  <li>Top-Notch Foundation Scholarship for Basic Research Talent, Chu Kochen Honors College (2025, 2026)</li>
+  <li>Third Prize &amp; Most Popular Poster Award, Academic Poster Competition, School of Earth Sciences — in a field of graduate students (2026)</li>
+  <li>Qiushi Eaglet Program grant, Zhejiang University (2025) — funded the visit to Colorado School of Mines</li>
+  <li>Second-Class University Scholarship, Zhejiang University (2026)</li>
+  <li>Honorable Mention, Mathematical Contest in Modeling (2026)</li>
+ </ul>
+</section>
+
+<section id="field">
+ <div class="section-head"><span class="section-no">04 / OUTSIDE</span><h2>In the Field</h2></div>
+ <div class="gallery">
+  <figure><img src="assets/photos/grand-canyon.jpg" alt="Xinran Liu at the South Rim of the Grand Canyon" width="960" height="1200" loading="lazy" decoding="async"><figcaption><b>Grand Canyon, Arizona</b> — nearly two billion years of Earth history exposed in layered strata.</figcaption></figure>
+  <figure><img src="assets/photos/rocky-mountain.jpg" alt="Granite outcrop and glacial valley in Rocky Mountain National Park" width="1200" height="900" loading="lazy" decoding="async"><figcaption><b>Rocky Mountain National Park, Colorado</b> — granite outcrops above a glacially carved valley.</figcaption></figure>
+ <figure><img src="assets/photos/alps.jpg" alt="Hiking a trail below carbonate peaks in the Dolomites" width="900" height="1200" loading="lazy" decoding="async"><figcaption><b>Dolomites, Italy</b> — on the trail below carbonate peaks raised by the Alpine orogeny.</figcaption></figure>
+  <figure><img src="assets/photos/alps-summit.jpg" alt="Summit view over the carbonate massifs of the Dolomites" width="1104" height="1000" loading="lazy" decoding="async"><figcaption><b>Summit view, Dolomites</b> — Triassic reefs from an ancient tropical sea, now towering above 3,000 m.</figcaption></figure>
+ </div>
+</section>
+
 <section id="contact">
- <div class="section-head"><span class="section-no">04 / CONNECT</span><h2>Contact</h2></div>
+ <div class="section-head"><span class="section-no">05 / CONNECT</span><h2>Contact</h2></div>
  <div class="contact">
-  <div><div class="contact-item"><div class="meta">EMAIL</div><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></div><div class="contact-item"><div class="meta">GITHUB</div><a href="https://github.com/MTinv-OT/MTinv_OT" target="_blank" rel="noopener">github.com/MTinv-OT</a></div></div>
-  <div><div class="contact-item"><div class="meta">AFFILIATION</div><p>Zhejiang University · College of Earth Sciences</p></div><div class="contact-item"><div class="meta">LOCATION</div><p>Hangzhou, China</p></div></div>
+  <div>
+   <div class="contact-item"><div class="meta">Email</div><p><a id="mail-link" href="#contact">xinran.liu [at] zju.edu.cn</a></p></div>
+   <div class="contact-item"><div class="meta">LinkedIn</div><p><a href="https://www.linkedin.com/in/xinran-liu-3387aa37b/" target="_blank" rel="noopener">linkedin.com/in/xinran-liu</a></p></div>
+  </div>
+  <div>
+   <div class="contact-item"><div class="meta">Affiliation</div><p>School of Earth Sciences, Zhejiang University<br><span class="serif">浙江大学地球科学学院</span></p></div>
+   <div class="contact-item"><div class="meta">Location</div><p>Hangzhou, China</p></div>
+  </div>
  </div>
 </section>
 </main>
-<footer><div class="wrap">© <span id="year">2026</span> Xinran Liu · Academic profile</div></footer>
+<footer><div class="wrap">© 2026 Xinran Liu · 刘欣然</div></footer>
+<script>
+// Assemble the email address at runtime so simple scrapers don't pick it up.
+(function(){var u='xinran.liu',d='zju.edu.cn',m='mailto:'+u+'@'+d;
+document.getElementById('mail-btn').href=m;var l=document.getElementById('mail-link');l.href=m;l.textContent=u+'@'+d;})();
+// Show initials only if no photo loaded.
+(function(){var a=document.querySelector('.avatar'),img=a.querySelector('img'),s=a.querySelector('.initials');
+function chk(){s.style.display=(img.complete&&img.naturalWidth)?'none':'';}
+if(img){img.addEventListener('load',chk);img.addEventListener('error',chk);}chk();})();
+// Gallery: size each figure by its aspect ratio so photos share one row height.
+document.querySelectorAll('.gallery img').forEach(function(i){var r=i.getAttribute('width')/i.getAttribute('height');i.parentNode.style.setProperty('--r',r);i.style.setProperty('--ar',r);});
+</script>
 </body></html>
