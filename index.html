@@ -108,6 +108,18 @@ footer{padding:26px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted
  .gallery figure{flex:0 0 auto;width:calc(300px * var(--r));max-width:86vw;scroll-snap-align:start}
 }
 @media(max-width:480px){.navlinks a[href="#honors"],.navlinks a[href="#field"]{display:none}}
+/* CV viewer */
+.cv-modal{position:fixed;inset:0;z-index:50;display:none;flex-direction:column;background:rgba(10,18,24,.82);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.cv-modal.open{display:flex}
+.cv-bar{display:flex;align-items:center;gap:10px;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top));background:var(--card);border-bottom:1px solid var(--line)}
+.cv-bar .t{font:600 15px Georgia,serif;color:var(--ink);margin-right:auto}
+.cv-bar a,.cv-bar button{font:650 13px inherit;font-family:inherit;display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:4px;border:1px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer}
+.cv-bar a:hover{text-decoration:none;background:var(--pale)}
+.cv-bar .x{border-color:var(--line);color:var(--muted);font-size:20px;padding:0 12px}
+.cv-pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:20px 16px calc(28px + env(safe-area-inset-bottom))}
+.cv-pages img{display:block;width:100%;max-width:860px;height:auto;aspect-ratio:1275/1650;margin:0 auto 16px;background:#fff;border-radius:3px;box-shadow:0 4px 24px rgba(0,0,0,.35)}
+body.noscroll{overflow:hidden}
+@media(max-width:720px){.cv-pages{padding:10px 8px 24px}.cv-pages img{margin-bottom:10px}.cv-bar{padding-left:12px;padding-right:12px}.cv-bar .t{font-size:14px}}
 </style>
 </head>
 <body>
@@ -130,7 +142,7 @@ footer{padding:26px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted
    <a class="btn primary" id="mail-btn" href="#contact"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm16 2.8-8 5-8-5V17h16z"/></svg>Email</a>
    <a class="btn" href="https://www.linkedin.com/in/xinran-liu-3387aa37b/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.7 4.8 6.1V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>LinkedIn</a>
    <a class="btn" href="https://github.com/MTinv-OT/MTinv_OT" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.8 18.3 5.1 18.3 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
-   <a class="btn" href="assets/Xinran_Liu_CV_public.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H4V2zm8 1.5V8h4.5zM8 12v2h8v-2zm0 4v2h8v-2z"/></svg>CV (PDF)</a>
+   <a class="btn" id="cv-btn" href="assets/Xinran_Liu_CV_public.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H4V2zm8 1.5V8h4.5zM8 12v2h8v-2zm0 4v2h8v-2z"/></svg>CV</a>
   </div>
  </div>
  <div class="avatar" aria-label="Photo of Xinran Liu"><img src="assets/avatar.jpg" alt="Xinran Liu" onerror="this.style.display='none'"><span class="initials">XL</span></div>
@@ -207,6 +219,10 @@ footer{padding:26px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted
 </section>
 </main>
 <footer><div class="wrap">© 2026 Xinran Liu · 刘欣然</div></footer>
+<div class="cv-modal" id="cv-modal" role="dialog" aria-modal="true" aria-label="Curriculum vitae">
+ <div class="cv-bar"><span class="t">Curriculum Vitae</span><a href="assets/Xinran_Liu_CV_public.pdf" download>Download PDF</a><button class="x" type="button" id="cv-close" aria-label="Close">×</button></div>
+ <div class="cv-pages" id="cv-pages"><img data-src="assets/cv-page-1.png" alt="CV page 1" width="1275" height="1650"><img data-src="assets/cv-page-2.png" alt="CV page 2" width="1275" height="1650"></div>
+</div>
 <script>
 // Assemble the email address at runtime so simple scrapers don't pick it up.
 (function(){var u='xinran.liu',d='zju.edu.cn',m='mailto:'+u+'@'+d;
@@ -217,5 +233,16 @@ function chk(){s.style.display=(img.complete&&img.naturalWidth)?'none':'';}
 if(img){img.addEventListener('load',chk);img.addEventListener('error',chk);}chk();})();
 // Gallery: size each figure by its aspect ratio so photos share one row height.
 document.querySelectorAll('.gallery img').forEach(function(i){var r=i.getAttribute('width')/i.getAttribute('height');i.parentNode.style.setProperty('--r',r);i.style.setProperty('--ar',r);});
+// CV viewer: open page images in an overlay; the button still links to the PDF if scripts fail.
+(function(){var m=document.getElementById('cv-modal'),btn=document.getElementById('cv-btn'),pages=document.getElementById('cv-pages'),open=false;
+function show(push){if(open)return;open=true;pages.querySelectorAll('img[data-src]').forEach(function(i){i.src=i.dataset.src;i.removeAttribute('data-src');});
+m.classList.add('open');document.body.classList.add('noscroll');pages.scrollTop=0;if(push)history.pushState({cv:1},'','#cv');document.getElementById('cv-close').focus();}
+function hide(){if(!open)return;open=false;m.classList.remove('open');document.body.classList.remove('noscroll');btn.focus({preventScroll:true});}
+btn.addEventListener('click',function(e){e.preventDefault();show(true);});
+document.getElementById('cv-close').addEventListener('click',function(){history.state&&history.state.cv?history.back():hide();});
+m.addEventListener('click',function(e){if(e.target===m)document.getElementById('cv-close').click();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)document.getElementById('cv-close').click();});
+window.addEventListener('popstate',function(){location.hash==='#cv'?show(false):hide();});
+if(location.hash==='#cv')show(false);})();
 </script>
 </body></html>
