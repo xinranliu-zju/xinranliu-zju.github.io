@@ -29,11 +29,11 @@
 <section>
  <h2>Approach</h2>
  <p>Building on Cheng&rsquo;s (2026) quasi-2-D spatial-posterior framework, I draw candidate models with MCMC, combine them by misfit-weighted averaging with spatial constraints between neighbouring points, and score the results for both accuracy and probabilistic calibration.</p>
- <figure class="fig"><img src="../assets/fig/learn-section.png" alt="True velocity model and recovered quasi-2-D image" width="1600" height="496" loading="lazy"><figcaption>Synthetic test. Left: true model. Right: our quasi-2-D image from an MCMC candidate pool with spatial constraints (RMSE 65 m/s). The dashed line marks the profile shown below.</figcaption></figure>
+ <figure class="fig"><img src="../assets/fig/learn-section.png" alt="True velocity model and recovered quasi-2-D image" width="1600" height="496" loading="lazy"><figcaption>Synthetic test on model M3. Left: the true M3 model. Right: our quasi-2-D image from an MCMC candidate pool with spatial constraints (RMSE 65 m/s). The dashed line at x = 150 m marks the profile shown below.</figcaption></figure>
 </section>
 <section>
  <h2>Findings so far</h2>
- <figure class="fig narrow"><img src="../assets/fig/learn-profile.png" alt="Velocity profile at 150 m comparing candidates, truth and two methods" width="800" height="974" loading="lazy"><figcaption>Profile at x = 150 m with 7% data noise. Grey: 100 MCMC candidates. Our result (red, RMSE 38.5 m/s) lies closer to the truth (yellow) than the reference method (blue, RMSE 57.0 m/s).</figcaption></figure>
+ <figure class="fig narrow"><img src="../assets/fig/learn-profile.png" alt="Velocity profile at 150 m comparing candidates, truth and two methods" width="800" height="974" loading="lazy"><figcaption>Profile through M3 at x = 150 m with 7% data noise. Grey: 100 MCMC candidates. Our result (red, RMSE 38.5 m/s) lies closer to the truth (yellow) than the reference method (blue, RMSE 57.0 m/s).</figcaption></figure>
  <ul>
   <li>In the baseline setting, misfit-weighted averaging of candidates accounts for more than 98% of the improvement over picking the single best-fitting model.</li>
   <li>Coupling neighbouring points adds little in that setting.</li>
