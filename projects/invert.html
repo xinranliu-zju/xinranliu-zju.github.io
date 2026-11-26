@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#176b72">
+<meta name="description" content="Robust magnetotelluric inversion with optimal transport and automatic differentiation.">
+<title>Robust EM imaging | Xinran Liu</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="proj">
+<header><div class="wrap"><nav>
+ <a class="brand" href="../">Xinran Liu</a>
+ <div class="navlinks"><a href="../#research">Research</a><a href="../#publications">Publications</a><a href="../#beyond">Beyond the Lab</a></div>
+</nav></div></header>
+<main class="wrap">
+<div class="proj-hero">
+ <a class="back" href="../#research">&larr; All research</a>
+ <div class="step" style="margin-top:22px">01 &middot; Invert</div>
+ <h1>Robust EM imaging</h1>
+ <p class="lede">Optimal transport keeps resistivity images stable when data are distorted.</p>
+ <div class="pmeta">2025&ndash;2026 &middot; Zhejiang University &middot; with Prof. Bo Yang, X. Chen and Z. Tang</div>
+</div>
+
+<section>
+ <h2>The question</h2>
+ <p>Magnetotelluric (MT) data are routinely distorted by noise and by near-surface effects such as static shift. The usual L2 misfit compares data point by point, so these distortions pass straight into the resistivity image. Can a misfit that compares the <em>overall shape</em> of the data make inversion more robust?</p>
+</section>
+<section>
+ <h2>Approach</h2>
+ <p>I built a 2-D MT forward and inverse framework in PyTorch. Gradients come from automatic differentiation and the adjoint method, and the data misfit is a Sinkhorn (optimal-transport) distance, extended to graph space so that it also accounts for where the stations are.</p>
+ <figure class="fig"><img src="../assets/fig/invert-framework.png" alt="Inversion workflow diagram" width="1397" height="683" loading="lazy"><figcaption>The inversion loop: forward modelling of impedance, apparent resistivity and phase; a Sinkhorn misfit; gradients by automatic differentiation and the adjoint method.</figcaption></figure>
+</section>
+<section>
+ <h2>Field data</h2>
+ <p>I applied the framework to two field datasets, a profile across the Cascadia Subduction Zone and a profile over the Akebasitao granite intrusions in the Tianshan, and compared the L2 and optimal-transport misfits on the same data.</p>
+ <figure class="fig"><img src="../assets/fig/invert-field.png" alt="Resistivity models from Cascadia and Akebasitao field data" width="1800" height="593" loading="lazy"><figcaption>The same field data inverted with two misfits. Top (a, b): conventional L2 misfit. Bottom (c, d): optimal-transport misfit. Left: Cascadia Subduction Zone, with the subducting Juan de Fuca slab (grey line) and Mt. Rainier. Right: Akebasitao granite intrusions, Tianshan.</figcaption></figure>
+</section>
+<section>
+ <h2>Takeaways</h2>
+ <ul>
+  <li>Forward model, misfit and gradients live in one differentiable framework, so new misfits can be tested quickly.</li>
+  <li>Optimal-transport misfits make the inversion more robust to noise and distortion than the pointwise L2 norm.</li>
+  <li>The method images key structures in two very different settings, from a subduction zone to a granite intrusion.</li>
+ </ul>
+</section>
+<section>
+ <h2>Outputs</h2>
+ <ul class="outputs">
+  <li>Oral presentation, EGU General Assembly 2026, Vienna</li>
+  <li>Poster, Chinese Geoscience Union Annual Meeting 2025, Chengdu</li>
+  <li>Manuscript in preparation for <em>IEEE Transactions on Geoscience and Remote Sensing</em></li>
+  <li>Code: <a href="https://github.com/MTinv-OT/MTinv_OT" target="_blank" rel="noopener">github.com/MTinv-OT/MTinv_OT</a></li>
+ </ul>
+</section>
+<div class="pager"><span><a href="../#research">&larr; All research</a></span><span><a href="observe.html">02 &middot; Observe &rarr;</a></span></div>
+</main>
+<footer><div class="wrap"><a class="mail-link" href="../">xinran.liu [at] zju.edu.cn</a><span>&copy; 2026 Xinran Liu &middot; 刘欣然</span></div></footer>
+<script>(function(){var u='xinran.liu',d='zju.edu.cn';document.querySelectorAll('.mail-link').forEach(function(l){l.href='mailto:'+u+'@'+d;l.textContent=u+'@'+d;});})();</script>
+</body></html>

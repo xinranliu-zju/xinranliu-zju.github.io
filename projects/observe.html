@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#176b72">
+<meta name="description" content="Using a telecom fiber and distributed acoustic sensing to track the temperature of water in a buried main.">
+<title>Fiber as a thermometer | Xinran Liu</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="proj">
+<header><div class="wrap"><nav>
+ <a class="brand" href="../">Xinran Liu</a>
+ <div class="navlinks"><a href="../#research">Research</a><a href="../#publications">Publications</a><a href="../#beyond">Beyond the Lab</a></div>
+</nav></div></header>
+<main class="wrap">
+<div class="proj-hero">
+ <a class="back" href="../#research">&larr; All research</a>
+ <div class="step" style="margin-top:22px">02 &middot; Observe</div>
+ <h1>Fiber as a thermometer</h1>
+ <p class="lede">A telecom fiber tracks the temperature of water flowing in a buried main.</p>
+ <div class="pmeta">Summer 2026 &middot; Colorado School of Mines &middot; with Prof. Ge Jin and Prof. Eileen R. Martin</div>
+</div>
+
+<section>
+ <h2>The question</h2>
+ <p>Cities already have thousands of kilometres of telecom fiber underground, often running beside water pipes. With distributed acoustic sensing (DAS), every metre of fiber becomes a seismic sensor. Can this existing infrastructure tell us what is happening inside a buried water main?</p>
+ <figure class="fig photo"><img src="../assets/fig/observe-schematic.jpg" alt="Schematic of a telecom fiber buried next to a pumped water main" width="1200" height="900" loading="lazy"><figcaption>Illustration of the setting: a telecom fiber (orange) buried near a water transmission main driven by a pump.</figcaption></figure>
+</section>
+<section>
+ <h2>Approach</h2>
+ <p>I processed large DAS ambient-noise datasets, computed time-lapse cross-correlations along the fiber, and measured seasonal changes in seismic velocity (dv/v). I then compared them with water temperature, precipitation, soil moisture and ground temperature.</p>
+ <figure class="fig photo narrow"><img src="../assets/fig/observe-site.jpg" alt="Aerial view of the study site" width="675" height="469" loading="lazy"><figcaption>Aerial view of the study site.</figcaption></figure>
+</section>
+<section>
+ <h2>Findings</h2>
+ <ul>
+  <li>Seismic velocity in the shallow ground changes seasonally by about 1.6%.</li>
+  <li>These changes follow a low-pass model of the water temperature (about 0.17% per kelvin) more closely than precipitation, soil moisture or ground temperature.</li>
+  <li>Recurring pump-excited guided waves travel inside the pipe; I interpret them with a fluid-filled pipe model and the Korteweg water-hammer wave speed.</li>
+ </ul>
+ <p>This points to passive, low-cost monitoring of flowing-water temperature, for example in cooling-water systems for data centers.</p>
+</section>
+<section>
+ <h2>Outputs</h2>
+ <ul class="outputs">
+  <li>Poster, AGU Annual Meeting 2026, San Francisco (with G. Jin, P. Li, E. R. Martin, F. Cheng and P. He)</li>
+ </ul>
+</section>
+<div class="pager"><span><a href="invert.html">&larr; 01 &middot; Invert</a></span><span><a href="learn.html">03 &middot; Learn &rarr;</a></span></div>
+</main>
+<footer><div class="wrap"><a class="mail-link" href="../">xinran.liu [at] zju.edu.cn</a><span>&copy; 2026 Xinran Liu &middot; 刘欣然</span></div></footer>
+<script>(function(){var u='xinran.liu',d='zju.edu.cn';document.querySelectorAll('.mail-link').forEach(function(l){l.href='mailto:'+u+'@'+d;l.textContent=u+'@'+d;});})();</script>
+</body></html>

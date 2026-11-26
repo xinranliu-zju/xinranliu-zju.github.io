@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#176b72">
+<meta name="description" content="Quasi-2-D surface-wave dispersion inversion with uncertainty, using candidate pools and spatial constraints.">
+<title>Imaging with uncertainty | Xinran Liu</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="proj">
+<header><div class="wrap"><nav>
+ <a class="brand" href="../">Xinran Liu</a>
+ <div class="navlinks"><a href="../#research">Research</a><a href="../#publications">Publications</a><a href="../#beyond">Beyond the Lab</a></div>
+</nav></div></header>
+<main class="wrap">
+<div class="proj-hero">
+ <a class="back" href="../#research">&larr; All research</a>
+ <div class="step" style="margin-top:22px">03 &middot; Learn</div>
+ <h1>Imaging with uncertainty</h1>
+ <p class="lede">Near-surface velocity images that report how much to trust them.</p>
+ <div class="pmeta">Undergraduate thesis, 2026&ndash; (in progress) &middot; Zhejiang University &middot; with Prof. Weichang Li and Prof. Feng Cheng</div>
+</div>
+
+<section>
+ <h2>The question</h2>
+ <p>Surface-wave dispersion inversion is non-unique: many shear-wave velocity profiles fit the same data. Instead of keeping only the best-fitting model, can we combine a pool of plausible candidates along a 2-D line, and say how much each part of the image can be trusted?</p>
+</section>
+<section>
+ <h2>Approach</h2>
+ <p>Building on Cheng&rsquo;s (2026) quasi-2-D spatial-posterior framework, I draw candidate models with MCMC, combine them by misfit-weighted averaging with spatial constraints between neighbouring points, and score the results for both accuracy and probabilistic calibration.</p>
+ <figure class="fig"><img src="../assets/fig/learn-section.png" alt="True velocity model and recovered quasi-2-D image" width="1600" height="496" loading="lazy"><figcaption>Synthetic test. Left: true model. Right: our quasi-2-D image from an MCMC candidate pool with spatial constraints (RMSE 65 m/s). The dashed line marks the profile shown below.</figcaption></figure>
+</section>
+<section>
+ <h2>Findings so far</h2>
+ <figure class="fig narrow"><img src="../assets/fig/learn-profile.png" alt="Velocity profile at 150 m comparing candidates, truth and two methods" width="800" height="974" loading="lazy"><figcaption>Profile at x = 150 m with 7% data noise. Grey: 100 MCMC candidates. Our result (red, RMSE 38.5 m/s) lies closer to the truth (yellow) than the reference method (blue, RMSE 57.0 m/s).</figcaption></figure>
+ <ul>
+  <li>In the baseline setting, misfit-weighted averaging of candidates accounts for more than 98% of the improvement over picking the single best-fitting model.</li>
+  <li>Coupling neighbouring points adds little in that setting.</li>
+  <li>Next: conditional generative models to make the candidate pool more diverse while needing fewer forward evaluations.</li>
+ </ul>
+</section>
+<div class="pager"><span><a href="observe.html">&larr; 02 &middot; Observe</a></span><span><a href="../#research">All research &rarr;</a></span></div>
+</main>
+<footer><div class="wrap"><a class="mail-link" href="../">xinran.liu [at] zju.edu.cn</a><span>&copy; 2026 Xinran Liu &middot; 刘欣然</span></div></footer>
+<script>(function(){var u='xinran.liu',d='zju.edu.cn';document.querySelectorAll('.mail-link').forEach(function(l){l.href='mailto:'+u+'@'+d;l.textContent=u+'@'+d;});})();</script>
+</body></html>
